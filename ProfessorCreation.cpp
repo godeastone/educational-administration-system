@@ -15,7 +15,7 @@ using namespace std;
 
 ProfessorCreation::ProfessorCreation() : ICommand()
 {
-	setCommandName("교수 등록");
+	setCommandName("Professor register");
 }
 
 void ProfessorCreation::execute()
@@ -32,7 +32,7 @@ void ProfessorCreation::execute()
 	int num;
 	int count = 0;
 
-	cout << "등록하려는 교수의 수 : ";
+	cout << "number of professor you wants to register : ";
 	scanf("%d", &num);
 
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -42,13 +42,13 @@ void ProfessorCreation::execute()
 	{
 		char name[100];
 		char id[100];
-		cout << "교수 이름 :";
+		cout << "professor name :";
 
 		if (cin.peek() != '\n')
 			cin >> std::setw(12) >> name;
 		else if (cin.peek() == '\n')
 		{
-			cout << "##모든 입력이 취소되었습니다." << endl << endl;
+			cout << "##all input information canceled." << endl << endl;
 			for (int i = 0; i < count; i++)
 			{
 				professorList.pop_back();
@@ -60,12 +60,12 @@ void ProfessorCreation::execute()
 		cout << endl;
 	Labels:
 
-		cout << "교수 번호 :";
+		cout << "professor name :";
 		if (cin.peek() != '\n')
 			cin >> setw(12) >> id;
 		else if (cin.peek() == '\n')
 		{
-			cout << "##모든 입력이 취소되었습니다1." << endl << endl;
+			cout << "##all input information canceled." << endl << endl;
 			for (int i = 0; i < count; i++)
 			{
 				professorList.pop_back();
@@ -79,7 +79,7 @@ void ProfessorCreation::execute()
 		sscanf(id, "%d", &x);
 		if (x < 1000 || x>9999)
 		{
-			cout << "##교수번호는 4자리 양의정수여야합니다." << endl;
+			cout << "##professor number should starts with four numbers." << endl;
 			goto Labels;
 		}
 		it_p = professorList.begin();
@@ -87,7 +87,7 @@ void ProfessorCreation::execute()
 		{
 			if ((*it_p)->GetId() == id)
 			{
-				cout << "##중복된 교수번호 입니다.\n" << endl;
+				cout << "##this is the duplicated professor number.\n" << endl;
 				goto Labels;
 			}
 			else
@@ -98,7 +98,7 @@ void ProfessorCreation::execute()
 
 		Professor *st = new Professor(name, id);
 		professorList.push_back(st);
-		cout << "교수 이름 : " << name << ",  교수 번호 : " << id << " *등록되었음*" << endl << endl;
+		cout << "professor name : " << name << ",  professor number : " << id << " *registered successfully*" << endl << endl;
 		count++;
 
 	}

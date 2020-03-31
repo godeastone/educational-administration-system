@@ -16,7 +16,7 @@ using namespace std;
 
 About_apply::About_apply() :ICommand()
 {
-	setCommandName("등록 관련");
+	setCommandName("About register");
 }
 void About_apply::addMenu(ICommand *command)
 {
@@ -40,7 +40,7 @@ void About_apply::execute()
 			i++;
 		}
 
-		cout << " [" << i << "] 종 료" << endl;
+		cout << " [" << i << "] exit" << endl;
 		cout << " " << "[a" << "] undo" << endl;
 		cout << " " << "[b" << "] redo" << endl;
 
@@ -58,14 +58,14 @@ void About_apply::execute()
 		{
 			if (historyList.empty())
 			{
-				cout << "##undo 를 할 수 없습니다!\n" << endl;
+				cout << "##Can't undo'!\n" << endl;
 			}
 			else
 			{
 				ICommand *co = historyList.top();
 				co->undo();
 				historyList2.push(historyList.top());
-				//undo를 위한 스택을 redo를 위한 스택으로 넘김.
+				
 				historyList.pop();
 			}
 		}
@@ -74,7 +74,7 @@ void About_apply::execute()
 		{
 			if (historyList2.empty())
 			{
-				cout << "##redo 를 할 수 없습니다!\n" << endl;
+				cout << "##Can't redo'!\n" << endl;
 			}
 			else
 			{

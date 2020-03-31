@@ -14,7 +14,7 @@ using namespace std;
 
 Class_Amend::Class_Amend() :ICommand()
 {
-	setCommandName("수강 정정");
+	setCommandName("Amend subject");
 }
 void Class_Amend::addMenu(ICommand *command)
 {
@@ -36,10 +36,10 @@ void Class_Amend::execute()
 
 	while (1)
 	{
-		cout << "학생이름 : ";
+		cout << "Student name : ";
 		cin >> name;
 		cout << endl;
-		cout << "학생번호 : ";
+		cout << "student number : ";
 		cin >> id;
 		cout << endl;
 
@@ -59,7 +59,7 @@ void Class_Amend::execute()
 
 		if (control1 == 0)
 		{
-			cout << "##이름과 학번이 맞지 않습니다.##" << endl << endl;
+			cout << "##Information do not match.##" << endl << endl;
 		}
 		else
 		{
@@ -73,12 +73,12 @@ void Class_Amend::execute()
 	{
 		if (name == (*it_s)->GetName() && id == (*it_s)->GetId())
 		{
-			cout << "*** " + name + " 학생의 수강 과목 리스트 ***" << endl;
+			cout << "*** " + name + " List of the subject ***" << endl;
 			it_c = (*it_s)->courseList_s.begin();
 
 			if ((*it_s)->courseList_s.empty())
 			{
-				cout << "##수강중인 과목이 없습니다##." << endl;
+				cout << "##No subject##." << endl;
 				control = 999;
 				goto LA;
 			}
@@ -100,7 +100,7 @@ void Class_Amend::execute()
 
 	if (control == 0)
 	{
-		cout << "\n**수강정정 하려는 과목의 번호를 입력하세요 : ";
+		cout << "\n**Enter the number of subject you want to amend : ";
 		cin >> sel;
 		it_c = (*it_s)->courseList_s.begin();
 		it_c += (sel - 1);
@@ -140,7 +140,7 @@ void Class_Amend::execute()
 
 	num = 1;
 
-	cout << "***** 수강 가능한 과목 목록 *****" << endl;
+	cout << "***** subjects you can register *****" << endl;
 
 	it_c = courseList.begin();
 	while (it_c < courseList.end())
@@ -192,7 +192,7 @@ Label5:
 
 	it_c = courseList.begin();
 
-	cout << "\n**수강신청 하려는 과목의 번호를 입력하세요 : ";
+	cout << "\n**Enter the subject number you want to register : ";
 	cin >> sel;
 
 	it_c += sel - 1;
@@ -215,7 +215,7 @@ LA:
 				Course *cr = new Course(name_c2, id_c2, "prof", "prof");
 				(*it_s)->courseList_s.push_back(cr);
 
-				cout << "$$" << name_o << "과목이 " << name_c2 << " 과목으로 수강정정 되었습니다$$";
+				cout << "$$" << name_o << "class " << name_c2 << " amends complete$$";
 				break;
 			}
 			else

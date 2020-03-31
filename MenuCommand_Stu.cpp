@@ -15,7 +15,7 @@ using namespace std;
 
 MenuCommand_Stu::MenuCommand_Stu() :ICommand()
 {
-	setCommandName("학생 메뉴");
+	setCommandName("student menu");
 }
 void MenuCommand_Stu::addMenu(ICommand *command)
 {
@@ -38,7 +38,7 @@ void MenuCommand_Stu::execute()
 			it++;
 			i++;
 		}
-		cout << " " << i << ") 종 료" << endl;
+		cout << " " << i << ") exit" << endl;
 		cout << " " << "a" << ") undo" << endl;
 		cout << " " << "b" << ") redo" << endl;
 
@@ -56,7 +56,7 @@ void MenuCommand_Stu::execute()
 		{
 			if (historyList.empty())
 			{
-				cout << "##undo 를 할 수 없습니다!\n" << endl;
+				cout << "##can't undo!\n" << endl;
 			}
 			else
 			{
@@ -72,7 +72,7 @@ void MenuCommand_Stu::execute()
 		{
 			if (historyList2.empty())
 			{
-				cout << "##redo 를 할 수 없습니다!\n" << endl;
+				cout << "##can't redo!\n" << endl;
 			}
 			else
 			{

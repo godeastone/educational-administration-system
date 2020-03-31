@@ -14,7 +14,7 @@ using namespace std;
 
 StudentCreation::StudentCreation() : ICommand()
 {
-	setCommandName("학생 등록");
+	setCommandName("Student register");
 }
 
 void StudentCreation::execute()
@@ -34,7 +34,7 @@ void StudentCreation::execute()
 	int num;
 	int count = 0;
 
-	cout << "등록하려는 학생의 수 : ";
+	cout << "number of students you want to register : ";
 	scanf("%d", &num);
 
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -45,13 +45,13 @@ void StudentCreation::execute()
 	Labels2:
 		char name[100];
 		char id[100];
-		cout << "학생 이름 :";
+		cout << "student name :";
 
 		if (cin.peek() != '\n')
 			cin >> std::setw(12) >> name;
 		else if (cin.peek() == '\n')
 		{
-			cout << "##모든 입력이 취소되었습니다." << endl << endl;
+			cout << "##All inputs were canceled." << endl << endl;
 			for (int i = 0; i < count; i++)
 			{
 				studentList.pop_back();
@@ -62,12 +62,12 @@ void StudentCreation::execute()
 
 		cout << endl;
 
-		cout << "학생 번호 :";
+		cout << "student number :";
 		if (cin.peek() != '\n')
 			cin >> setw(12) >> id;
 		else if (cin.peek() == '\n')
 		{
-			cout << "##모든 입력이 취소되었습니다1." << endl << endl;
+			cout << "##all inputs were canceled." << endl << endl;
 			for (int i = 0; i < count; i++)
 			{
 				studentList.pop_back();
@@ -81,7 +81,7 @@ void StudentCreation::execute()
 		sscanf(id, "%d", &x);
 		if (x < 99999999 || x>999999999)
 		{
-			cout << "##학생번호는 9자리 양의정수여야합니다." << endl;
+			cout << "##students number should be 9-number." << endl;
 			goto Labels2;
 		}
 
@@ -90,7 +90,7 @@ void StudentCreation::execute()
 		{
 			if ((*it_s)->GetId() == id)
 			{
-				cout << "##중복된 학번입니다.\n" << endl;
+				cout << "##duplicated student number.\n" << endl;
 				goto Labels2;
 			}
 			else
@@ -101,7 +101,7 @@ void StudentCreation::execute()
 
 		Student *st = new Student(name, id);
 		studentList.push_back(st);
-		cout << "학생 이름 : " << name << ",  학생 번호 : " << id << " *등록되었음*" << endl << endl;
+		cout << "student name : " << name << ",  student number : " << id << " *regist complete*" << endl << endl;
 		count++;
 	}
 

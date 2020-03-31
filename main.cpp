@@ -73,7 +73,7 @@ int main()
 	it_p++;
 	(*it_p)->courseList_p.push_back(cr4);
 
-	Menu *topMenu = new Menu("아주대학교학사시스템");
+	Menu *topMenu = new Menu("Educational-administration-system");
 	ICommand *subMenu1 = new MenuCommand_Stu();
 	ICommand *subMenu2 = new MenuCommand_Pro();
 	ICommand *subMenu3 = new MenuCommand_Crs();

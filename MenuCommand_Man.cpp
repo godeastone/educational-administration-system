@@ -15,7 +15,7 @@ using namespace std;
 
 MenuCommand_Man::MenuCommand_Man() :ICommand()
 {
-	setCommandName("매니저 메뉴");
+	setCommandName("manager menu");
 }
 void MenuCommand_Man::addMenu(ICommand *command)
 {
@@ -38,7 +38,7 @@ void MenuCommand_Man::execute()
 			it++;
 			i++;
 		}
-		cout << " " << i << ") 종 료" << endl;
+		cout << " " << i << ") exit" << endl;
 		cout << " " << "a" << ") undo" << endl;
 		cout << " " << "b" << ") redo" << endl;
 
@@ -56,7 +56,7 @@ void MenuCommand_Man::execute()
 		{
 			if (historyList.empty())
 			{
-				cout << "##undo 를 할 수 없습니다!\n" << endl;
+				cout << "##can't undo!\n" << endl;
 			}
 			else
 			{
@@ -71,7 +71,7 @@ void MenuCommand_Man::execute()
 		{
 			if (historyList2.empty())
 			{
-				cout << "##redo 를 할 수 없습니다!\n" << endl;
+				cout << "##can't undo!\n" << endl;
 			}
 			else
 			{

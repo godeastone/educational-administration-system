@@ -16,7 +16,7 @@ using namespace std;
 
 About_course::About_course() :ICommand()
 {
-	setCommandName("과목 관련");
+	setCommandName("About subject");
 }
 void About_course::addMenu(ICommand *command)
 {
@@ -39,7 +39,7 @@ void About_course::execute()
 			it++;
 			i++;
 		}
-		cout << " [" << i << "] 종 료" << endl;
+		cout << " [" << i << "] exit" << endl;
 		cout << " " << "[a" << "] undo" << endl;
 		cout << " " << "[b" << "] redo" << endl;
 
@@ -57,7 +57,7 @@ void About_course::execute()
 		{
 			if (historyList.empty())
 			{
-				cout << "##undo 를 할 수 없습니다!\n" << endl;
+				cout << "##Can't undo'!\n" << endl;
 			}
 			else
 			{
@@ -73,7 +73,7 @@ void About_course::execute()
 		{
 			if (historyList2.empty())
 			{
-				cout << "##redo 를 할 수 없습니다!\n" << endl;
+				cout << "##Can't redo!\n" << endl;
 			}
 			else
 			{

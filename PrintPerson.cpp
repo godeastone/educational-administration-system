@@ -17,19 +17,19 @@ string name2;
 
 PrintPerson::PrintPerson() : ICommand()
 {
-	setCommandName("전체 인원 정보 출력");
+	setCommandName("Show all people's information");
 }
 void PrintPerson::execute()
 {
 	string name, id, course, grade, course_id;
-	cout << "****학생 정보****" << endl;
+	cout << "****student information****" << endl;
 	it_s = studentList.begin();
 	while (it_s < studentList.end())
 	{
 		name = (*it_s)->GetName();
 		id = (*it_s)->GetId();
 
-		cout << name << " 학생(" << id << ")의 수강정보---<과목>------<성적>-------\n";
+		cout << name << " student(" << id << ")'s subjects---<subject>------<grade>-------\n";
 		it_c = (*it_s)->courseList_s.begin();
 		while (it_c < (*it_s)->courseList_s.end())
 		{
@@ -43,14 +43,14 @@ void PrintPerson::execute()
 
 	}
 
-	cout << "\n\n\n****교수 정보****" << endl;
+	cout << "\n\n\n****professor information****" << endl;
 	it_p = professorList.begin();
 	while (it_p < professorList.end())
 	{
 		name = (*it_p)->GetName();
 		id = (*it_p)->GetId();
 
-		cout << name << " 교수(" << id << ")의 정보---<과목>------<과목코드>-------\n";
+		cout << name << " professor(" << id << ")'s information---<subject>------<number of subject>-------\n";
 		it_c = (*it_p)->courseList_p.begin();
 		while (it_c < (*it_p)->courseList_p.end())
 		{

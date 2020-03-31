@@ -14,7 +14,7 @@ using namespace std;
 
 CourseCancel::CourseCancel() : ICommand()
 {
-	setCommandName("과목 폐강");
+	setCommandName("Subject closing");
 }
 void CourseCancel::execute()
 {
@@ -31,13 +31,13 @@ void CourseCancel::execute()
 	{
 
 		control = 0;
-		cout << "폐강할 과목 이름 :";
+		cout << "subject name you want to close :";
 		cin >> name;
 		cout << endl;
-		cout << "폐강할 과목 코드 :";
+		cout << "subject number you want to close :";
 		cin >> id;
 		cout << endl;
-		cout << "담당 교수 번호 :";
+		cout << "Professor number of subject :";
 		cin >> professor_id;
 		cout << endl;
 		it_p = professorList.begin();
@@ -57,7 +57,7 @@ void CourseCancel::execute()
 
 		if (control == 0)
 		{
-			cout << "유효하지 않은 과목입니다. 다시입력하세요." << endl << endl;
+			cout << "Information not matched. try again." << endl << endl;
 			continue;
 		}
 
@@ -97,7 +97,7 @@ void CourseCancel::execute()
 			{
 				courseList.erase(it_c);
 				//iterator을 이용하여 courseList의 과목을 제거
-				cout << professor_name + "교수님의 " + name + "과목이 폐지되었습니다." << endl << endl;
+				cout << professor_name + "Professor's " + name + "subject was closed." << endl << endl;
 				control = 0;
 				break;
 			}
@@ -112,7 +112,7 @@ void CourseCancel::execute()
 		}
 		else
 		{
-			cout << "유효하지 않은 과목입니다. 다시 입력하세요." << endl << endl;
+			cout << "Information Not matched. try again." << endl << endl;
 		}
 	}
 

@@ -16,7 +16,7 @@ using namespace std;
 
 StudentDelete::StudentDelete() : ICommand()
 {
-	setCommandName("학생 삭제");
+	setCommandName("Delete students");
 }
 void StudentDelete::execute()
 {
@@ -33,10 +33,10 @@ void StudentDelete::execute()
 	{
 		string name, id;
 		int control = 0;
-		cout << "학생 이름 :";
+		cout << "student name :";
 		cin >> name;
 		cout << endl;
-		cout << "학생 번호 :";
+		cout << "student number :";
 		cin >> id;
 		cout << endl;
 
@@ -46,7 +46,7 @@ void StudentDelete::execute()
 			if (name == (*it_s)->GetName() && id == (*it_s)->GetId())
 			{
 				studentList.erase(it_s);
-				cout << "학생 이름 : " << name << ",  학생 번호 : " << id << " *삭제되었음*" << endl << endl;
+				cout << "student name : " << name << ",  student number : " << id << " *deleted*" << endl << endl;
 				control = 1;
 				break;
 			}
@@ -57,7 +57,7 @@ void StudentDelete::execute()
 		}
 		if (control == 0)
 		{
-			cout << "입력한 정보의 학생이 없습니다." << endl << endl;
+			cout << "Information not matched. try again" << endl << endl;
 			continue;
 		}
 		break;

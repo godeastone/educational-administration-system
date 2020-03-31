@@ -13,7 +13,7 @@ using namespace std;
 
 CoursePrint::CoursePrint() : ICommand()
 {
-	setCommandName("과목 수강생 출력");
+	setCommandName("Show subject's students list");
 }
 void CoursePrint::execute()
 {
@@ -25,9 +25,9 @@ void CoursePrint::execute()
 
 	while (1)
 	{
-		cout << "교수 이름 : ";
+		cout << "professor name : ";
 		cin >> prof_name;
-		cout << "\n교수 번호 : ";
+		cout << "\nprofessor number : ";
 		cin >> prof_id;
 
 		it_p = professorList.begin();
@@ -49,14 +49,14 @@ void CoursePrint::execute()
 			it_p--;
 		}
 
-		cout << "**" << prof_name << " 교수님 개설과목" << endl;
-		cout << " <과목 이름>        <과목 코드>" << endl;
+		cout << "**" << prof_name << " professor's subject" << endl;
+		cout << " <subject name>        <subject number>" << endl;
 
 		it_c = (*it_p)->courseList_p.begin();
 
 		if (it_c == (*it_p)->courseList_p.end() && control1 == 1)
 		{
-			cout << "##개설 과목이 없습니다." << endl << endl;
+			cout << "##No subject." << endl << endl;
 			control3 = 1;
 			break;
 		}
@@ -74,17 +74,17 @@ void CoursePrint::execute()
 		}
 		else
 		{
-			cout << "##잘못된 교수정보입니다. 다시 입력하세요." << endl << endl;
+			cout << "##Information not matched. try again.." << endl << endl;
 		}
 	}
 
 	while (control3 == 0)
 	{
-		cout << "과목 코드 : ";
+		cout << "subject number : ";
 		cin >> course_id;
 
-		cout << "** " << course_id << " 과목 수강학생" << endl;
-		cout << " <이름>        <학번>" << endl;
+		cout << "** " << course_id << " subject's students list" << endl;
+		cout << " <name>        <number>" << endl;
 		it_c = courseList.begin();
 		while (it_c < courseList.end())
 		{
@@ -109,6 +109,6 @@ void CoursePrint::execute()
 			cout << endl << endl;
 			break;
 		}
-		cout << "##잘못된 과목 코드 입력입니다. 다시 입력하세요" << endl << endl;
+		cout << "##Information not matched. try again." << endl << endl;
 	}
 }

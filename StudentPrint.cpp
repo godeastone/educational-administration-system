@@ -14,7 +14,7 @@ using namespace std;
 
 StudentPrint::StudentPrint() : ICommand()
 {
-	setCommandName("학생 정보 조회");
+	setCommandName("Show student information");
 }
 void StudentPrint::execute()
 {
@@ -23,22 +23,22 @@ void StudentPrint::execute()
 
 	while (1)
 	{
-		cout << "조회할 학생의 학번 :";
+		cout << "student number you want to search :";
 		cin >> id1;
 		it_s = studentList.begin();
 		while (it_s < studentList.end())
 		{
 			if (id1 == (*it_s)->GetId())
 			{
-				cout << "\n**학생 이름 :" << (*it_s)->GetName() << endl << endl;
-				cout << "**" << (*it_s)->GetName() << "학생 수강현황**" << endl;
-				cout << "<과목명>     <성적>" << endl;
+				cout << "\n**student name :" << (*it_s)->GetName() << endl << endl;
+				cout << "**" << (*it_s)->GetName() << "'s subject list**" << endl;
+				cout << "<subject>     <grade>" << endl;
 
 				it_c = (*it_s)->courseList_s.begin();
 				string str;
 				if ((*it_s)->courseList_s.end() == (*it_s)->courseList_s.begin())
 				{
-					cout << "수강중인 과목이 없습니다." << endl << endl;
+					cout << "No subjects." << endl << endl;
 					control = 1;
 					break;
 				}
@@ -51,7 +51,7 @@ void StudentPrint::execute()
 					str += (*it_c)->GetGrade();
 					if ((*it_c)->GetGrade() == "\0")
 					{
-						str += "등록된 점수가 없습니다.";
+						str += "No grades.";
 					}
 					str += "\n";
 					it_c++;
@@ -69,7 +69,7 @@ void StudentPrint::execute()
 		cout << endl;
 		if (control == 0)
 		{
-			cout << "잘못된 학번입니다. 다시 입력하세요." << endl << endl;
+			cout << "Information not matched. try again" << endl << endl;
 			continue;
 		}
 		else

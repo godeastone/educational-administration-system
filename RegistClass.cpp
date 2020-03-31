@@ -15,7 +15,7 @@ using namespace std;
 
 RegistClass::RegistClass() : ICommand()
 {
-	setCommandName("수강 신청");
+	setCommandName("regist subject");
 
 }
 void RegistClass::execute()
@@ -26,10 +26,10 @@ void RegistClass::execute()
 
 	while (1)
 	{
-		cout << "학생이름 : ";
+		cout << "student name : ";
 		cin >> name;
 		cout << endl;
-		cout << "학생번호 : ";
+		cout << "student number : ";
 		cin >> id;
 		cout << endl;
 
@@ -50,7 +50,7 @@ void RegistClass::execute()
 
 		if (control == 0)
 		{
-			cout << "##이름과 학번이 맞지 않습니다." << endl << endl;
+			cout << "##Information not matched. try again." << endl << endl;
 		}
 		else
 		{
@@ -58,7 +58,7 @@ void RegistClass::execute()
 		}
 	}
 
-	cout << "***** 수강 가능한 과목 목록 *****" << endl;
+	cout << "***** Available subjects *****" << endl;
 
 	it_c = courseList.begin();
 	while (it_c < courseList.end())
@@ -89,11 +89,11 @@ void RegistClass::execute()
 
 Label:
 
-	cout << "\n**수강신청 하려는 과목의 번호를 입력하세요 : ";
+	cout << "\n**Enter the number of subjects you want to register : ";
 	cin >> sel;
 	if (sel > num - 1)
 	{
-		cout << "유효하지 않은 선택입니다." << endl << endl;
+		cout << "Information not matched. try again" << endl << endl;
 		goto Label;
 	}
 	it_c += sel - 1;
@@ -121,7 +121,7 @@ Label:
 			it_s++;
 		}
 	}
-	cout << "$$수강 신청 완료$$" << endl << endl;
+	cout << "$$register complete$$" << endl << endl;
 
 	registclass_id.push_back(id);
 	registclass_id_c.push_back(id_c);

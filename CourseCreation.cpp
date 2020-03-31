@@ -13,7 +13,7 @@ using namespace std;
 
 CourseCreation::CourseCreation() :ICommand()
 {
-	setCommandName("과목 개설");
+	setCommandName("Create subject");
 }
 void CourseCreation::execute()
 {
@@ -30,12 +30,12 @@ void CourseCreation::execute()
 		control = 0;
 		count = 1;
 
-		cout << "개설할 과목 이름 :";
+		cout << "subject name you want to create :";
 		cin >> name;
 		cout << endl;
 	Labelt:
 
-		cout << "개설할 과목 코드 :";
+		cout << "number of subject you want to create :";
 		cin >> id;
 		cout << endl;
 
@@ -50,10 +50,10 @@ void CourseCreation::execute()
 		p = str[5] - 48;
 		if (str[0] != 'C' || str[1] != 'S' || x > 9 || x < 0 || y>9 || y < 0 || z>9 || z < 0 || p != -48)
 		{//과목코드 입력조건 확인
-			cout << "##과목코드는 CS로 시작하는 세자리 정수여야 합니다." << endl;
+			cout << "##subject number should starts with CS, and three number." << endl;
 			goto Labelt;
 		}
-		cout << "담당 교수 번호 :";
+		cout << "Professor number of subject :";
 		cin >> professor_id;
 		cout << endl;
 
@@ -114,7 +114,7 @@ void CourseCreation::execute()
 		}
 		if (control == 0)
 		{
-			cout << "유효하지 않은 교수번호입니다. 다시 입력하세요." << endl << endl;
+			cout << "Information not matched. try again." << endl << endl;
 			continue;
 		}
 		Course *st = new Course(name, id, professor_id, professor_name);
@@ -135,7 +135,7 @@ void CourseCreation::execute()
 				it_p++;
 			}
 		}
-		cout << "과목이름 : " << name << "  과목번호 : " << id << "  담당교수 : " << professor_name << " 등록되었음" << endl << endl;
+		cout << "subject name : " << name << "  subject number : " << id << "  professor : " << professor_name << " register complete" << endl << endl;
 
 		if (control == 1)
 		{
@@ -143,7 +143,7 @@ void CourseCreation::execute()
 		}
 		else
 		{
-			cout << "유효하지 않은 과목입니다. 다시 입력하세요." << endl << endl;
+			cout << "Information not matched. try again." << endl << endl;
 		}
 	}
 

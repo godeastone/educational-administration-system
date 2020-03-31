@@ -16,7 +16,7 @@ using namespace std;
 
 About_delete::About_delete() :ICommand()
 {
-	setCommandName("삭제 관련");
+	setCommandName("About deletion");
 }
 void About_delete::addMenu(ICommand *command)
 {
@@ -40,7 +40,7 @@ void About_delete::execute()
 			it++;
 			i++;
 		}
-		cout << " [" << i << "] 종 료" << endl;
+		cout << " [" << i << "] exit" << endl;
 		cout << " " << "[a" << "] undo" << endl;
 		cout << " " << "[b" << "] redo" << endl;
 
@@ -58,7 +58,7 @@ void About_delete::execute()
 		{
 			if (historyList.empty())
 			{
-				cout << "##undo 를 할 수 없습니다!\n" << endl;
+				cout << "##Can't undo!\n" << endl;
 			}
 			else
 			{
@@ -74,7 +74,7 @@ void About_delete::execute()
 		{
 			if (historyList2.empty())
 			{
-				cout << "##redo 를 할 수 없습니다!\n" << endl;
+				cout << "##Can't redo!\n" << endl;
 			}
 			else
 			{

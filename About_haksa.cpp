@@ -14,7 +14,7 @@ using namespace std;
 
 About_haksa::About_haksa() :ICommand()
 {
-	setCommandName("학사 관련");
+	setCommandName("About course");
 }
 void About_haksa::addMenu(ICommand *command)
 {
@@ -37,7 +37,7 @@ void About_haksa::execute()
 			it++;
 			i++;
 		}
-		cout << " [" << i << "] 종 료" << endl;
+		cout << " [" << i << "] exit" << endl;
 		cout << " " << "[a" << "] undo" << endl;
 		cout << " " << "[b" << "] redo" << endl;
 
@@ -55,7 +55,7 @@ void About_haksa::execute()
 		{
 			if (historyList.empty())
 			{
-				cout << "##undo 를 할 수 없습니다!\n" << endl;
+				cout << "##Can't undo!\n" << endl;
 			}
 			else
 			{
@@ -71,7 +71,7 @@ void About_haksa::execute()
 		{
 			if (historyList2.empty())
 			{
-				cout << "##redo 를 할 수 없습니다!\n" << endl;
+				cout << "##Can't redo!\n" << endl;
 			}
 			else
 			{

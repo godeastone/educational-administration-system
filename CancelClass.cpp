@@ -20,17 +20,17 @@ using namespace std;
 
 CancelClass::CancelClass() :ICommand()
 {
-	setCommandName("수강 취소");
+	setCommandName("Cancel subject");
 }
 
 void CancelClass::execute()
 {
 	while (1)
 	{
-		cout << "학생이름 : ";
+		cout << "Student name : ";
 		cin >> name;
 		cout << endl;
-		cout << "학생번호 : ";
+		cout << "Student number : ";
 		cin >> id;
 		cout << endl;
 
@@ -50,7 +50,7 @@ void CancelClass::execute()
 
 		if (control1 == 0)
 		{
-			cout << "##이름과 학번이 맞지 않습니다.##" << endl << endl;
+			cout << "##Information do not match'.##" << endl << endl;
 		}
 		else
 		{
@@ -64,12 +64,12 @@ void CancelClass::execute()
 	{
 		if (name == (*it_s)->GetName() && id == (*it_s)->GetId())
 		{
-			cout << "*** " + name + " 학생의 수강 과목 리스트 ***" << endl;
+			cout << "*** " + name + " 's List of subjects ***" << endl;
 			it_c = (*it_s)->courseList_s.begin();
 
 			if ((*it_s)->courseList_s.empty())
 			{
-				cout << "##수강중인 과목이 없습니다##." << endl;
+				cout << "##No subject##." << endl;
 				control = 1;
 				break;
 			}
@@ -93,12 +93,12 @@ void CancelClass::execute()
 	{
 	Label2:
 
-		cout << "\n**수강취소 하려는 과목의 번호를 입력하세요 : ";
+		cout << "\n**Enter the number of subject you want to cancel : ";
 		cin >> sel;
 
 		if (sel > num - 1)
 		{
-			cout << "유효하지 않은 선택입니다." << endl << endl;
+			cout << "Can't do that'." << endl << endl;
 			goto Label2;
 		}
 
@@ -120,7 +120,7 @@ void CancelClass::execute()
 					if (name == (*it_s)->GetName() && id == (*it_s)->GetId())
 					{
 						(*it_c)->studentList_c.erase(it_s);
-						cout << "$$수강 취소 완료$$." << endl;
+						cout << "$$Cancel subject complete$$." << endl;
 						break;
 					}
 					else

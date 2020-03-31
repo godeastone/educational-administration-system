@@ -16,7 +16,7 @@ string name3;
 
 PrintCourse::PrintCourse() : ICommand()
 {
-	setCommandName("전체 과목 정보 출력");
+	setCommandName("Show all subject information");
 }
 void PrintCourse::execute()
 {
@@ -35,8 +35,8 @@ void PrintCourse::execute()
 		it_s = (*it_c)->studentList_c.begin();
 		num = (*it_c)->studentList_c.size();
 
-		cout << "**" << name << " 과목(" << id << ") 학생정보** - 담당교수 : " << prof << "(" << profid << ")" << "\n***학생 수 : " << num << endl;
-		cout << "-----<이름>------------<학번>----------" << endl;
+		cout << "**" << name << " subject (" << id << ") studnet information ** - professor : " << prof << "(" << profid << ")" << "\n***number of student : " << num << endl;
+		cout << "-----<name>------------<number>----------" << endl;
 		while (it_s < (*it_c)->studentList_c.end())
 		{
 			stu_name = (*it_s)->GetName();
@@ -49,7 +49,7 @@ void PrintCourse::execute()
 		/////////////////////
 		if (courseList.empty())
 		{
-			cout << "개설된 과목이 없습니다." << endl << endl;
+			cout << "No subjects." << endl << endl;
 			break;
 		}
 		it_c++;

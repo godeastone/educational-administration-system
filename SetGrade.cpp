@@ -14,7 +14,7 @@ using namespace std;
 
 SetGrade::SetGrade() : ICommand()
 {
-	setCommandName("성적 입력");
+	setCommandName("grading");
 }
 void SetGrade::execute()
 {
@@ -31,9 +31,9 @@ void SetGrade::execute()
 
 	while (1)
 	{
-		cout << "교수 이름 : ";
+		cout << "professor name : ";
 		cin >> prof_name;
-		cout << "\n교수 번호 : ";
+		cout << "\nprofessor number : ";
 		cin >> prof_id;
 
 		it_p = professorList.begin();
@@ -55,14 +55,14 @@ void SetGrade::execute()
 			it_p--;
 		}
 
-		cout << "**" << prof_name << " 교수님 개설과목" << endl;
-		cout << " <과목 이름>        <과목 코드>" << endl;
+		cout << "**" << prof_name << " professor's subjects" << endl;
+		cout << " <name>        <number>" << endl;
 
 		it_c = (*it_p)->courseList_p.begin();
 
 		if (it_c == (*it_p)->courseList_p.end() && control1 == 1)
 		{
-			cout << "##개설 과목이 없습니다." << endl << endl;
+			cout << "##No subjects." << endl << endl;
 			control3 = 1;
 			break;
 		}
@@ -80,18 +80,18 @@ void SetGrade::execute()
 		}
 		else
 		{
-			cout << "##잘못된 교수정보입니다. 다시 입력하세요." << endl << endl;
+			cout << "##Information not matched. try again" << endl << endl;
 		}
 	}
 
 
 	while (control3 == 0)
 	{
-		cout << "과목 코드 : ";
+		cout << "subject number : ";
 		cin >> course_id;
 
-		cout << "\n**** " << course_id << " 과목 수강학생 ****" << endl;
-		cout << " <이름>        <학번>" << endl;
+		cout << "\n**** " << course_id << " subject's students ****" << endl;
+		cout << " <name>        <number>" << endl;
 		it_c = courseList.begin();
 		while (it_c < courseList.end())
 		{
@@ -120,11 +120,11 @@ void SetGrade::execute()
 			cout << endl << endl;
 			break;
 		}
-		cout << "##잘못된 과목 코드 입력입니다. 다시 입력하세요" << endl << endl;
+		cout << "##Information not matched. try again" << endl << endl;
 	}
 
 
-	cout << "**순서대로 성적을 입력하세요**" << endl << endl;
+	cout << "**enter the grade in order**" << endl << endl;
 	int n2 = 1;
 
 
@@ -151,11 +151,11 @@ void SetGrade::execute()
 						{
 							if (course_id == (*it_c2)->GetId())
 							{
-								cout << n2 << "번 학생 점수 : ";
+								cout << n2 << "order student's grade : ";
 								cin >> grade;
 								if ((grade != "A") && (grade != "B") && (grade != "C") && (grade != "D") && (grade != "F"))
 								{
-									cout << "입력 가능한 성적이 아닙니다." << endl << endl;
+									cout << "Information not matched. try again" << endl << endl;
 									continue;
 								}
 								n--;

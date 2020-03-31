@@ -15,7 +15,7 @@ using namespace std;
 
 About_regist::About_regist() :ICommand()
 {
-	setCommandName("수강 관련");
+	setCommandName("About regist subject");
 }
 void About_regist::addMenu(ICommand *command)
 {
@@ -38,7 +38,7 @@ void About_regist::execute()
 			it++;
 			i++;
 		}
-		cout << " [" << i << "] 종 료" << endl;
+		cout << " [" << i << "] exit" << endl;
 		cout << " " << "[a" << "] undo" << endl;
 		cout << " " << "[b" << "] redo" << endl;
 
@@ -56,7 +56,7 @@ void About_regist::execute()
 		{
 			if (historyList.empty())
 			{
-				cout << "##undo 를 할 수 없습니다!\n" << endl;
+				cout << "##Can't undo!\n" << endl;
 			}
 			else
 			{
@@ -72,7 +72,7 @@ void About_regist::execute()
 		{
 			if (historyList2.empty())
 			{
-				cout << "##redo 를 할 수 없습니다!\n" << endl;
+				cout << "##Can't redo!\n" << endl;
 			}
 			else
 			{

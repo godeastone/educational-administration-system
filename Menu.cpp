@@ -36,7 +36,7 @@ void Menu::execute()
 			it++;
 			i++;
 		}
-		cout << i << ". 종 료" << endl;
+		cout << i << ". exit" << endl;
 		cout << "" << "a" << ". undo" << endl;
 		cout << "" << "b" << ". redo" << endl;
 		cout << "" << ">> ";
@@ -53,7 +53,7 @@ void Menu::execute()
 		{
 			if (historyList.empty())
 			{
-				cout << "##undo 를 할 수 없습니다!\n" << endl;
+				cout << "##can't undo'!\n" << endl;
 			}
 			else
 			{
@@ -69,7 +69,7 @@ void Menu::execute()
 		{
 			if (historyList2.empty())
 			{
-				cout << "##redo 를 할 수 없습니다!\n" << endl;
+				cout << "##can't redo'!\n" << endl;
 			}
 			else
 			{
