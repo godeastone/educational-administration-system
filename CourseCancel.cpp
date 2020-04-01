@@ -14,7 +14,7 @@ using namespace std;
 
 CourseCancel::CourseCancel() : ICommand()
 {
-	setCommandName("Subject closing");
+	setCommandName("class closing");
 }
 void CourseCancel::execute()
 {
@@ -31,10 +31,10 @@ void CourseCancel::execute()
 	{
 
 		control = 0;
-		cout << "subject name you want to close :";
+		cout << "class name you want to close :";
 		cin >> name;
 		cout << endl;
-		cout << "subject number you want to close :";
+		cout << "class number you want to close :";
 		cin >> id;
 		cout << endl;
 		cout << "Professor number of subject :";

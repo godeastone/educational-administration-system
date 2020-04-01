@@ -14,7 +14,7 @@ using namespace std;
 
 MenuCommand_Crs::MenuCommand_Crs() :ICommand()
 {
-	setCommandName("subject menu");
+	setCommandName("class menu");
 }
 void MenuCommand_Crs::addMenu(ICommand *command)
 {

@@ -15,7 +15,7 @@ using namespace std;
 
 About_regist::About_regist() :ICommand()
 {
-	setCommandName("About regist subject");
+	setCommandName("About regist class");
 }
 void About_regist::addMenu(ICommand *command)
 {

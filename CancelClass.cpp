@@ -20,7 +20,7 @@ using namespace std;
 
 CancelClass::CancelClass() :ICommand()
 {
-	setCommandName("Cancel subject");
+	setCommandName("Cancel class");
 }
 
 void CancelClass::execute()
@@ -64,12 +64,12 @@ void CancelClass::execute()
 	{
 		if (name == (*it_s)->GetName() && id == (*it_s)->GetId())
 		{
-			cout << "*** " + name + " 's List of subjects ***" << endl;
+			cout << "*** " + name + " 's List of classes ***" << endl;
 			it_c = (*it_s)->courseList_s.begin();
 
 			if ((*it_s)->courseList_s.empty())
 			{
-				cout << "##No subject##." << endl;
+				cout << "##No class##." << endl;
 				control = 1;
 				break;
 			}
@@ -93,7 +93,7 @@ void CancelClass::execute()
 	{
 	Label2:
 
-		cout << "\n**Enter the number of subject you want to cancel : ";
+		cout << "\n**Enter the number of class you want to cancel : ";
 		cin >> sel;
 
 		if (sel > num - 1)
@@ -120,7 +120,7 @@ void CancelClass::execute()
 					if (name == (*it_s)->GetName() && id == (*it_s)->GetId())
 					{
 						(*it_c)->studentList_c.erase(it_s);
-						cout << "$$Cancel subject complete$$." << endl;
+						cout << "$$Cancel class complete$$." << endl;
 						break;
 					}
 					else

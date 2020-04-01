@@ -29,7 +29,7 @@ void PrintPerson::execute()
 		name = (*it_s)->GetName();
 		id = (*it_s)->GetId();
 
-		cout << name << " student(" << id << ")'s subjects---<subject>------<grade>-------\n";
+		cout << name << " student(" << id << ")'s classes---<class>------<grade>-------\n";
 		it_c = (*it_s)->courseList_s.begin();
 		while (it_c < (*it_s)->courseList_s.end())
 		{
@@ -50,7 +50,7 @@ void PrintPerson::execute()
 		name = (*it_p)->GetName();
 		id = (*it_p)->GetId();
 
-		cout << name << " professor(" << id << ")'s information---<subject>------<number of subject>-------\n";
+		cout << name << " professor(" << id << ")'s information---<class>------<number of classes>-------\n";
 		it_c = (*it_p)->courseList_p.begin();
 		while (it_c < (*it_p)->courseList_p.end())
 		{

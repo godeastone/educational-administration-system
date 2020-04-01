@@ -16,7 +16,7 @@ using namespace std;
 
 About_course::About_course() :ICommand()
 {
-	setCommandName("About subject");
+	setCommandName("About class");
 }
 void About_course::addMenu(ICommand *command)
 {

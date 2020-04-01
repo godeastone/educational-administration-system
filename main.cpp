@@ -37,41 +37,6 @@ using namespace std;
 
 int main()
 {
-	Student *st1 = new Student("유수정", "201900001");
-	Student *st2 = new Student("정애인", "201900002");
-	Student *st3 = new Student("김종언", "201900003");
-	Student *st4 = new Student("유수정", "201800001");
-	studentList.push_back(st1);
-	studentList.push_back(st2);
-	studentList.push_back(st3);
-	studentList.push_back(st4);
-
-	Course *cr1 = new Course("OOP", "CS001-1", "1922", "박선주");
-	Course *cr2 = new Course("OOP", "CS001-2", "1923", "이유민");
-	Course *cr3 = new Course("AI", "CS002", "1923", "이유민");
-	Course *cr4 = new Course("Compiler", "CS003", "1924", "조인우");
-	courseList.push_back(cr1);
-	courseList.push_back(cr2);
-	courseList.push_back(cr3);
-	courseList.push_back(cr4);
-
-
-	Professor *pr1 = new Professor("박선주", "1922");
-	Professor *pr2 = new Professor("이유민", "1923");
-	Professor *pr3 = new Professor("조인우", "1924");
-	Professor *pr4 = new Professor("박선주", "1925");
-	professorList.push_back(pr1);
-	professorList.push_back(pr2);
-	professorList.push_back(pr3);
-	professorList.push_back(pr4);
-
-	it_p = professorList.begin();
-	(*it_p)->courseList_p.push_back(cr1);
-	it_p++;
-	(*it_p)->courseList_p.push_back(cr2);
-	(*it_p)->courseList_p.push_back(cr3);
-	it_p++;
-	(*it_p)->courseList_p.push_back(cr4);
 
 	Menu *topMenu = new Menu("Educational-administration-system");
 	ICommand *subMenu1 = new MenuCommand_Stu();

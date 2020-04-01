@@ -13,7 +13,7 @@ using namespace std;
 
 CourseCreation::CourseCreation() :ICommand()
 {
-	setCommandName("Create subject");
+	setCommandName("Create class");
 }
 void CourseCreation::execute()
 {
@@ -30,12 +30,12 @@ void CourseCreation::execute()
 		control = 0;
 		count = 1;
 
-		cout << "subject name you want to create :";
+		cout << "class name you want to create :";
 		cin >> name;
 		cout << endl;
 	Labelt:
 
-		cout << "number of subject you want to create :";
+		cout << "number of class you want to create :";
 		cin >> id;
 		cout << endl;
 
@@ -50,10 +50,10 @@ void CourseCreation::execute()
 		p = str[5] - 48;
 		if (str[0] != 'C' || str[1] != 'S' || x > 9 || x < 0 || y>9 || y < 0 || z>9 || z < 0 || p != -48)
 		{//과목코드 입력조건 확인
-			cout << "##subject number should starts with CS, and three number." << endl;
+			cout << "##class number should starts with CS, and three number." << endl;
 			goto Labelt;
 		}
-		cout << "Professor number of subject :";
+		cout << "Professor number of class :";
 		cin >> professor_id;
 		cout << endl;
 
@@ -135,7 +135,7 @@ void CourseCreation::execute()
 				it_p++;
 			}
 		}
-		cout << "subject name : " << name << "  subject number : " << id << "  professor : " << professor_name << " register complete" << endl << endl;
+		cout << "class name : " << name << "  class number : " << id << "  professor : " << professor_name << " register complete" << endl << endl;
 
 		if (control == 1)
 		{

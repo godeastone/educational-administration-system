@@ -13,7 +13,7 @@ using namespace std;
 
 CoursePrint::CoursePrint() : ICommand()
 {
-	setCommandName("Show subject's students list");
+	setCommandName("Show class's students list");
 }
 void CoursePrint::execute()
 {
@@ -50,13 +50,13 @@ void CoursePrint::execute()
 		}
 
 		cout << "**" << prof_name << " professor's subject" << endl;
-		cout << " <subject name>        <subject number>" << endl;
+		cout << " <class name>        <class number>" << endl;
 
 		it_c = (*it_p)->courseList_p.begin();
 
 		if (it_c == (*it_p)->courseList_p.end() && control1 == 1)
 		{
-			cout << "##No subject." << endl << endl;
+			cout << "##No class." << endl << endl;
 			control3 = 1;
 			break;
 		}
@@ -80,10 +80,10 @@ void CoursePrint::execute()
 
 	while (control3 == 0)
 	{
-		cout << "subject number : ";
+		cout << "class number : ";
 		cin >> course_id;
 
-		cout << "** " << course_id << " subject's students list" << endl;
+		cout << "** " << course_id << " class's students list" << endl;
 		cout << " <name>        <number>" << endl;
 		it_c = courseList.begin();
 		while (it_c < courseList.end())

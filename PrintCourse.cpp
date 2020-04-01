@@ -16,7 +16,7 @@ string name3;
 
 PrintCourse::PrintCourse() : ICommand()
 {
-	setCommandName("Show all subject information");
+	setCommandName("Show all classes information");
 }
 void PrintCourse::execute()
 {
@@ -35,7 +35,7 @@ void PrintCourse::execute()
 		it_s = (*it_c)->studentList_c.begin();
 		num = (*it_c)->studentList_c.size();
 
-		cout << "**" << name << " subject (" << id << ") studnet information ** - professor : " << prof << "(" << profid << ")" << "\n***number of student : " << num << endl;
+		cout << "**" << name << " class (" << id << ") studnet information ** - professor : " << prof << "(" << profid << ")" << "\n***number of student : " << num << endl;
 		cout << "-----<name>------------<number>----------" << endl;
 		while (it_s < (*it_c)->studentList_c.end())
 		{
@@ -49,7 +49,7 @@ void PrintCourse::execute()
 		/////////////////////
 		if (courseList.empty())
 		{
-			cout << "No subjects." << endl << endl;
+			cout << "No classes." << endl << endl;
 			break;
 		}
 		it_c++;

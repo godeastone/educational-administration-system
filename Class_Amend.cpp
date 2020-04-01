@@ -14,7 +14,7 @@ using namespace std;
 
 Class_Amend::Class_Amend() :ICommand()
 {
-	setCommandName("Amend subject");
+	setCommandName("Amend class");
 }
 void Class_Amend::addMenu(ICommand *command)
 {
@@ -73,12 +73,12 @@ void Class_Amend::execute()
 	{
 		if (name == (*it_s)->GetName() && id == (*it_s)->GetId())
 		{
-			cout << "*** " + name + " List of the subject ***" << endl;
+			cout << "*** " + name + " List of the classes ***" << endl;
 			it_c = (*it_s)->courseList_s.begin();
 
 			if ((*it_s)->courseList_s.empty())
 			{
-				cout << "##No subject##." << endl;
+				cout << "##No class##." << endl;
 				control = 999;
 				goto LA;
 			}
@@ -100,7 +100,7 @@ void Class_Amend::execute()
 
 	if (control == 0)
 	{
-		cout << "\n**Enter the number of subject you want to amend : ";
+		cout << "\n**Enter the number of class you want to amend : ";
 		cin >> sel;
 		it_c = (*it_s)->courseList_s.begin();
 		it_c += (sel - 1);
@@ -140,7 +140,7 @@ void Class_Amend::execute()
 
 	num = 1;
 
-	cout << "***** subjects you can register *****" << endl;
+	cout << "***** classes you can register *****" << endl;
 
 	it_c = courseList.begin();
 	while (it_c < courseList.end())
@@ -192,7 +192,7 @@ Label5:
 
 	it_c = courseList.begin();
 
-	cout << "\n**Enter the subject number you want to register : ";
+	cout << "\n**Enter the class number you want to register : ";
 	cin >> sel;
 
 	it_c += sel - 1;
